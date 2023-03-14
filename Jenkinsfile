@@ -57,7 +57,7 @@ pipeline {
 //         }
         stage('Ansible Deploy') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
+                withCredentials([usernamePassword(credentialsId: 'Docker_id', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
                     ansiblePlaybook(
                         installation: 'Ansible',
                         inventory: 'inventory',
