@@ -1,0 +1,22 @@
+- name: Run Docker container
+  hosts: spe_containers
+  become: true
+  tasks:
+    - name: Logging in to Docker Hub
+      docker_login:
+        registry_url: https://index.docker.io/v1/
+        username: "{{ jenkins_credentials_username }}"
+        password: "{{ jenkins_credentials_password }}"
+
+    - name: Pull Docker image
+      docker_image:
+        name: hashir10/spe_mini_project
+        source: pull
+
+
+    - name: Run Docker container
+      docker_container:
+        name: Calculator
+        image: hashir10/spe_mini_project
+        state: started  
+        command: java -jar /Calculator_mini_project-1.0-SNAPSHOT.jar
