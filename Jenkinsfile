@@ -34,19 +34,19 @@ pipeline {
         stage('Delete previous Image and Containers') {
             steps {
                 sh '''
-                    # Get the IDs of all images with the tag <none>
+                    # Getting the IDs of all images with the tag <none>
                     NONE_IMAGES=$(docker images | grep "<none>" | awk '{print $3}')
-                    # Delete all of the <none> images
+                    # Deleting all of the <none> images
                     for IMAGE in $NONE_IMAGES
                     do
                       docker rmi --force $IMAGE
                     done
-                    # Delete all of the containers associated with the <none> images
+                    # Deleting all of the containers associated with the <none> images
                     for IMAGE in $NONE_IMAGES
                     do
-                      # Get the container IDs for the image
+                    # Getting the container IDs for the image
                       CONTAINER_IDS=$(docker ps -a | grep $IMAGE | awk '{print $1}')
-                  # Remove the containers
+                    # Removing the containers
                   for CONTAINER_ID in $CONTAINER_IDS
                   do
                     docker rm --force $CONTAINER_ID
@@ -63,7 +63,7 @@ pipeline {
                         inventory: 'inventory',
                         playbook: 'ansible_playbook.yml',
                         colorized: true,
-                        disableHostKeyChecking: true,
+                        disableHostKeyChecking: true, //yes / no automatic for host
                         extraVars: [
                             'jenkins_credentials_username': "${DOCKERHUB_USERNAME}",
                             'jenkins_credentials_password': "${DOCKERHUB_PASSWORD}"
