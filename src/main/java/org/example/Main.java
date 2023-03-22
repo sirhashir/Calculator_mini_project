@@ -69,9 +69,9 @@ public class Main
                     double pow_number = sc.nextDouble();
                     logger.info("Input Number received: "+ pow_number);
 
-                    System.out.println("Enter a base: ");
+                    System.out.println("Enter exponent: ");
                     double pow_base = sc.nextDouble();
-                    logger.info("Input Base received: "+ pow_base);
+                    logger.info("Input exponent received: "+ pow_base);
 
                     double pow_ans = getPow(pow_base, pow_number);
                     System.out.println("The POWER is: "+pow_ans);
