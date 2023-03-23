@@ -28,6 +28,7 @@ public class Main
             System.out.println("2. Factorial function - x!");
             System.out.println("3. Natural logarithm (base )е ln(x)");
             System.out.println("4. Power function - x^b");
+            System.out.println("0: Exit the Application");
 
             choice = sc.nextInt();
 
@@ -79,7 +80,7 @@ public class Main
                     break;
 
                 case 0:
-                logger.info("Exit...");
+                logger.info("Exiting...");
                     System.out.println("Exiting...");
                     break;
 
@@ -123,5 +124,4 @@ public class Main
     {
         return Math.pow(pow_base, pow_number);
     }
-
 }
