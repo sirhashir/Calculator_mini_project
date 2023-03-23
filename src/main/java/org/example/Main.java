@@ -123,5 +123,5 @@ public class Main
     public static double getPow(double pow_base, double pow_number)
     {
         return Math.pow(pow_base, pow_number);
-    }
+    } //
 }
