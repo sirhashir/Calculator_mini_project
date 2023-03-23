@@ -19,4 +19,6 @@
         name: Calculator
         image: hashir10/spe_mini_project
         state: started  
+        tty: yes
+        interactive: yes
         command: java -jar /Calculator_mini_project-1.0-SNAPSHOT.jar
