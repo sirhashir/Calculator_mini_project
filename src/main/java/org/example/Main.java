@@ -119,7 +119,7 @@ public class Main
         return Math.log(log_number);
     }
 
-    //Function for Power Function
+    //Function for Power Function ok
     public static double getPow(double pow_base, double pow_number)
     {
         return Math.pow(pow_base, pow_number);
